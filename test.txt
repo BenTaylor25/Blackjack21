@@ -1,0 +1,10 @@
+21 Blackjack is a two-player card game where each player starts with two cards
+from a deck of cards valued 1-11.
+Each player's first card is face down and only that player knows its value.
+Every other card is face up and can be seen by both players.
+The goal is to finish the round with the higher score,
+but if you go over 21, you lose.
+Players can choose to Draw or Stick.
+To Draw is to take another card from the shared deck.
+To Stick is to keep the cards you have.
+The game ends when both players Stick consecutively.
