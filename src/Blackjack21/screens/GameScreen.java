@@ -40,10 +40,9 @@ public class GameScreen implements Screen {
         for (int i = 0; i < playerDeck.size(); i++) {
             terminal.write(getWrStr(playerDeck, i), i*4, 2);
         }
-        
-        terminal.writeCenter("J = Stick   K = Draw", 18);
 
         if (isPlayerTurn) {
+            terminal.writeCenter("J = Stick   K = Draw", 18);
             terminal.writeCenter("Your Turn", 22);
         } else {
             terminal.writeCenter("Computer's Turn", 22);
