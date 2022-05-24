@@ -21,7 +21,7 @@ if deckSum > 21 then
 endif                                                                                              
 ```
 
-Assume playerFirst = median( {remainingCards + playerFirst} )
+Assume playerFirst = median( {remainingCards + playerFirst} ) <br>
 Thus playerSum = playerFirst + playerVisibleSum.
 
 Now that we have a prediction for the playerSum, we can make our choice.
@@ -33,8 +33,7 @@ else
 endif
 ```
 
-I make no claim that this is the best algorithm for cpuMove(),
-in fact I can think of several improvements, i.e.
+I make no claim that this is the best algorithm for cpuMove(), in fact I can think of several improvements, i.e.
 
 - assume PlayerFirst = min( Known_[Remaining + PlayerFirst] )
     - if playerSum > 21, always stick
