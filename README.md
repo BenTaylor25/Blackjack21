@@ -8,7 +8,7 @@ Uses <a href="https://github.com/trystan">Trystan Spangler</a>'s <a href="https:
 
 
 <h2>AI algorithm</h2>                                                
-We know that playerSum = [something] + playerVisibleSum.
+We know that playerSum = [something] + playerVisibleSum. <br>
 We also know aiSum.
 
 We also know that playerFirst is in {remainingCards + playerFirst}.
@@ -37,13 +37,13 @@ I make no claim that this is the best algorithm for cpuMove(),
 in fact I can think of several improvements, i.e.
 
 - assume PlayerFirst = min( Known_[Remaining + PlayerFirst] )
-  - if playerSum > 21, always stick
+    - if playerSum > 21, always stick
 
 - assume PlayerFirst = max( Known_[Remaining + PlayerFirst] )
-  - if playerSum < cpuSum, always stick
+    - if playerSum < cpuSum, always stick
 
 -  if cpuSum + max( Known_[Remaining + PlayerFirst] ) <= 21, you can draw safely
-  - most notable when playerValue is higher for most of ( Known_[Remaining + PlayerFirst] )
+    -  most notable when playerValue is higher for most of ( Known_[Remaining + PlayerFirst] )
 
 However I feel that this solution is sufficient to not be too easy.
 
