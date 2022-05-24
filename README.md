@@ -3,3 +3,43 @@
 This is a simple project that I developed to help me get the hang of Java.
 
 Uses <a href="https://github.com/trystan">Trystan Spangler</a>'s <a href="https://github.com/trystan/AsciiPanel">AsciiPanel</a>.
+
+<h2>Blackjack</h2>
+
+
+<h2>AI algorithm</h2>
+                                                                          
+
+    We know that PlayerSum = PlayerFirst(?) + Known_PlayerSum                                              
+    We also know that CpuSum = Known_CpuSum                                                                
+
+    We also know that PlayerFirst is in Known_[Remaining + PlayerFirst]                                    
+
+    We can assign a value to each sum depending on it's likelihood of winning using the following:         
+        value = deckSum                                                                                    
+        if deckSum > 21 then                                                                               
+            value = 0                                                                                      
+        endif                                                                                              
+
+*   Assume PlayerSum = median( Known_[Remaining + PlayerFirst] )                                           
+
+    if cpuSum < playerValue then                                                                           
+        draw()                                                                                             
+    else                                                                                                   
+        stick()                                                                                            
+    endif                                                                                                  
+
+    I make no claim that this is the best algorithm for cpuMove(),                                         
+    in fact I can think of several improvements, i.e.                                                      
+
+        - assume PlayerFirst = min( Known_[Remaining + PlayerFirst] )                                      
+            - if playerSum > 21, always stick                                                              
+
+        - assume PlayerFirst = max( Known_[Remaining + PlayerFirst] )                                      
+            - if playerSum < cpuSum, always stick                                                          
+
+        -  if cpuSum + max( Known_[Remaining + PlayerFirst] ) <= 21, you can draw safely                   
+            - most notable when playerValue is higher for most of ( Known_[Remaining + PlayerFirst] )      
+
+    However this is sufficient to not be too easy or too hard.                                             
+
