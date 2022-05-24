@@ -20,6 +20,9 @@ There are many different versions of this popular card game, but they generally 
 - Scores are calculated by summing the values of each card in the hand.
     - Scores exceding 21 are 'bust'; there value drops to 0.
     - Therefore the optimal score is 21.
+- The player with the highest score wins the round.
+
+(I don't know how accurate this is to the casino version as I have not played casino blackjack).
 
 <h3>Rules for this Version</h3>
 
