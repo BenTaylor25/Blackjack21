@@ -7,39 +7,43 @@ Uses <a href="https://github.com/trystan">Trystan Spangler</a>'s <a href="https:
 <h2>Blackjack</h2>
 
 
-<h2>AI algorithm</h2>
-                                                                          
+<h2>AI algorithm</h2>                                                
+We know that playerSum = [something] + playerVisibleSum.
+We also know aiSum.
 
-    We know that PlayerSum = PlayerFirst(?) + Known_PlayerSum                                              
-    We also know that CpuSum = Known_CpuSum                                                                
+We also know that playerFirst is in {remainingCards + playerFirst}.
 
-    We also know that PlayerFirst is in Known_[Remaining + PlayerFirst]                                    
+We can assign a value to each hand (playerSum and aiSum) depending on it's likelihood of winning using the following:
+```
+value = deckSum
+if deckSum > 21 then
+    value = 0                                                                                      
+endif                                                                                              
+```
 
-    We can assign a value to each sum depending on it's likelihood of winning using the following:         
-        value = deckSum                                                                                    
-        if deckSum > 21 then                                                                               
-            value = 0                                                                                      
-        endif                                                                                              
+Assume playerFirst = median( {remainingCards + playerFirst} )
+Thus playerSum = playerFirst + playerVisibleSum.
 
-*   Assume PlayerSum = median( Known_[Remaining + PlayerFirst] )                                           
+Now that we have a prediction for the playerSum, we can make our choice.
+```
+if cpuSum < playerSum then
+    draw()
+else
+    stick()
+endif
+```
 
-    if cpuSum < playerValue then                                                                           
-        draw()                                                                                             
-    else                                                                                                   
-        stick()                                                                                            
-    endif                                                                                                  
+I make no claim that this is the best algorithm for cpuMove(),
+in fact I can think of several improvements, i.e.
 
-    I make no claim that this is the best algorithm for cpuMove(),                                         
-    in fact I can think of several improvements, i.e.                                                      
+- assume PlayerFirst = min( Known_[Remaining + PlayerFirst] )
+  - if playerSum > 21, always stick
 
-        - assume PlayerFirst = min( Known_[Remaining + PlayerFirst] )                                      
-            - if playerSum > 21, always stick                                                              
+- assume PlayerFirst = max( Known_[Remaining + PlayerFirst] )
+  - if playerSum < cpuSum, always stick
 
-        - assume PlayerFirst = max( Known_[Remaining + PlayerFirst] )                                      
-            - if playerSum < cpuSum, always stick                                                          
+-  if cpuSum + max( Known_[Remaining + PlayerFirst] ) <= 21, you can draw safely
+  - most notable when playerValue is higher for most of ( Known_[Remaining + PlayerFirst] )
 
-        -  if cpuSum + max( Known_[Remaining + PlayerFirst] ) <= 21, you can draw safely                   
-            - most notable when playerValue is higher for most of ( Known_[Remaining + PlayerFirst] )      
-
-    However this is sufficient to not be too easy or too hard.                                             
+However I feel that this solution is sufficient to not be too easy.
 
