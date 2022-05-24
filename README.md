@@ -6,8 +6,32 @@ Uses <a href="https://github.com/trystan">Trystan Spangler</a>'s <a href="https:
 
 <h2>Blackjack</h2>
 
+<h3>General Rules</h3>
 
-<h2>AI algorithm</h2>                                                
+There are many different versions of this popular card game, but they generally follow these ideas:
+- There is a deck of cards containing values 1-11 (usually the same amount of each).
+- Each player starts with one face-down card and one face-up card, drawn from the same deck.
+    - Players can view their own face-down card, but not their opponent's.
+    - Players can see all face-up cards.
+- Players take turns to either Draw or Hold.
+    - Draw: draw another card from the shared deck to add to your hand (face-up).
+    - Hold: do not draw; pass your turn.
+- The game ends when all players Hold consecutively.
+- Scores are calculated by summing the values of each card in the hand.
+    - Scores exceding 21 are 'bust'; there value drops to 0.
+    - Therefore the optimal score is 21.
+
+<h3>Rules for this Version</h3>
+
+- There are two players.
+- There is one card for each value.
+    - Therefore, if 11 has been drawn, it cannot be drawn again.
+    - This decision has been made because I feel it makes the game more predictable and thus strategic.
+- There is no gambling aspect in this version.
+
+
+<h2>AI algorithm</h2>
+
 We know that playerSum = [something] + playerVisibleSum. <br>
 We also know aiSum.
 
