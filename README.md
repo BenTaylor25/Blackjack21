@@ -4,6 +4,8 @@ This is a simple project that I developed to help me get the hang of Java.
 
 Uses <a href="https://github.com/trystan">Trystan Spangler</a>'s <a href="https://github.com/trystan/AsciiPanel">AsciiPanel</a>.
 
+https://user-images.githubusercontent.com/97246704/170115881-5db87666-ceae-48e7-8aa6-808e3e21cc0b.mp4
+
 <h2>Blackjack</h2>
 
 <h3>General Rules</h3>
