@@ -38,7 +38,7 @@ There are many different versions of this popular card game, but they generally 
 - There is no gambling aspect in this version.
 
 
-<h2>AI algorithm</h2>
+<h2>AI Algorithm</h2>
 
 We know that playerSum = [something] + playerVisibleSum. <br>
 We also know aiSum.
